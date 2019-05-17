@@ -1,0 +1,61 @@
+@media (max-width: 1000px) 
+{
+	.carousel-container
+	{
+		width: 85%;
+	}
+	#content
+	{
+		width: 100%;
+		text-align: center;
+		padding-bottom: 30px;
+		
+	}
+	#map_content
+	{
+		height: 100%;
+		margin-bottom: 0;
+	}
+	#mapid
+	{
+		width: 85%;
+		height: 60vh;
+		margin: 0 auto;
+		margin-bottom: 50px;
+	}
+
+	#accept, #clear
+	{
+		width: 120px;
+		height: 60px;
+		
+	}
+
+	#bookingTitle
+	{
+		font-size: 30px;
+		line-height: 60px;
+	}
+	#name, #lastname 
+	{
+		margin: 0 auto;
+	}
+}
+
+
+@media (max-width: 600px)
+{
+	#jumbotron-title
+	{
+		font-size: 35px;
+	}
+	
+}
+
+@media (max-width : 800px) 
+{
+	.carousel-container
+	{
+		display: none;
+	}
+}

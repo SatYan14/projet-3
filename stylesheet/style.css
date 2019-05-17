@@ -1,0 +1,428 @@
+html,body
+{
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	font-size: 20px;
+}
+
+h1
+{
+	text-align: center;
+	font-size: 40px;
+	font-family: 'Encode Sans Semi Expanded', sans-serif;
+	padding-top: 50px;
+	
+}
+
+h4
+{
+    text-align: center;
+}
+#parent
+{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-around;
+
+}
+
+#logo2
+{
+	display: none;
+}
+
+
+#reservation
+{
+	width: 120px;
+	margin: auto;
+	display: none;
+	font-family: 'Encode Sans Semi Expanded', sans-serif;
+	font-size: 22px;
+	border-radius: 7px;
+}
+
+#mapid
+{
+	height: 100%;
+	width: 75%;
+}
+
+#content
+{
+	width: 25%;
+}
+
+#content h3
+{
+	
+	font-size: 20px;
+	font-family: 'Encode Sans Semi Expanded', sans-serif;
+}
+
+
+#content h2
+{
+	font-size: 25px;
+	text-align: center;
+	font-family: 'Encode Sans Semi Expanded', sans-serif;
+}
+
+#content ul 
+{
+	padding-left: 10px;
+}
+
+#content ul li 
+{
+	font-family: 'Encode Sans Semi Expanded', sans-serif;
+	list-style-type: none;
+	margin-bottom: 45px;
+}
+
+
+#map_content
+{
+	width: 100%;
+	margin-top: 50px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	height: 80vh;
+}
+
+#onoffswitch-container
+{
+	display: flex;
+	flex-direction: row;
+}
+
+
+#onoffswitch-container p
+{
+	margin-top: auto;
+	margin-bottom: auto;
+	font-size: 17px;
+	padding-right: 10px;
+}
+
+/* Bouton permettant d'activer ou de désactiver le mode nuit */
+
+.onoffswitch {
+    position: relative; width: 88px;
+    -webkit-user-select:none; -moz-user-select:none; -ms-user-select: none;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+.onoffswitch-checkbox {
+    display: none;
+}
+.onoffswitch-label {
+    display: block; overflow: hidden; cursor: pointer;
+    border: 2px solid #E3E3E3; border-radius: 36px;
+}
+.onoffswitch-inner {
+    display: block; width: 200%; margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+.onoffswitch-inner:before, .onoffswitch-inner:after {
+    display: block; float: left; width: 50%; height: 36px; padding: 0; line-height: 36px;
+    font-size: 16px; color: white; font-family: Trebuchet, Arial, sans-serif; font-weight: bold;
+    box-sizing: border-box;
+}
+.onoffswitch-inner:before {
+    content: "";
+    padding-left: 10px;
+    background-color: #A5A5A5; color: #FFFFFF;
+}
+.onoffswitch-inner:after {
+    content: "";
+    padding-right: 10px;
+    background-color: #2BBD57; color: #666666;
+    text-align: right;
+}
+.onoffswitch-switch {
+	display: block; width: 44px; margin: -2px;
+	height: 44px;
+    background: #A1A1A1;
+    position: absolute; top: 0; bottom: 0;
+    right: 48px;
+    border: 2px solid #E3E3E3; border-radius: 36px;
+    transition: all 0.3s ease-in 0s; 
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+.onoffswitch-checkbox:checked + .onoffswitch-label .onoffswitch-switch {
+    right: 0px; 
+    background-color: #EDEDED; 
+}
+/* Canvas container permettant de gérer la position du canvas */
+
+#canvas-container
+{
+    text-align: center;
+}
+
+#signature
+{
+	border: 1px solid black;
+    display: inline;
+}
+
+/* Canvas "blanc" afin de vérifier que l'utilisateur a bien signé */
+#blank
+{
+    display: none;
+}
+
+#button-container
+{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+
+}
+
+#accept, #clear
+{
+	margin-top: 20px;
+	width: 130px;
+	font-size: 22px;
+	font-family: 'Encode Sans Semi Expanded', sans-serif;
+	border-radius: 10px;
+}
+
+#accept, #clear:focus
+{
+	outline: 0;
+}
+#accept
+{
+    border-radius: 7px;
+	height: 60px;
+	color: white;
+	background-color: #007bff;
+	border: 1px solid #007bff;
+}
+button
+{
+	border-radius: 7px;
+	height: 60px;
+	color: white;
+	background-color: #007bff;
+	border: 1px solid #007bff;
+	
+}
+
+button:focus {
+	outline: 0;
+}
+
+
+
+.jumbotron
+{
+
+    display: none;
+
+}
+
+.time
+{
+    color: #2BBD57;
+}
+
+.jumbotron-container
+{
+	width: 50%;
+	word-wrap: break-word;
+	
+}
+
+.jumbotron
+{
+    width: 100%;
+    
+}
+
+#reservation:focus
+{
+    outline: 0;
+}
+
+/* Animation de réservation */
+@keyframes swing {
+	20% {
+	  transform: rotate3d(0, 0, 1, 7deg);
+	}
+  
+	40% {
+	  transform: rotate3d(0, 0, 1, -7deg);
+	}
+  
+	60% {
+	  transform: rotate3d(0, 0, 1, 3deg);
+	}
+  
+	80% {
+	  transform: rotate3d(0, 0, 1, -3deg);
+	}
+  
+	to {
+	  transform: rotate3d(0, 0, 1, 0deg);
+	}
+  }
+  
+  .swing {
+	transform-origin: top center;
+	animation-name: swing;
+	animation-duration: 1.5s;
+	animation-fill-mode: forwards;
+  }
+
+  #jumbotron-title
+  {
+	  font-size: 45px;
+  }
+
+  .link
+  {
+	  color: white;
+	  cursor: default;
+	  width: 130px;
+	  
+  }
+
+  .link:link
+  {
+	text-decoration: none;
+  }
+
+  .btn:focus
+  {
+	  outline : 0;
+  }
+
+  .fa-dizzy
+  {
+	  display: none;
+  }
+
+
+
+.jumbotron-container
+{
+	margin: 50px auto;
+}
+
+/* Carousel */
+
+
+.carousel-container
+{
+    width: 60%;
+    margin: 70px auto;
+    position: relative;
+    height: 650px;
+}
+
+.carousel-container img
+{
+    width: 100%;
+    position: absolute;
+    height: 650px;
+}
+
+.carousel-button
+{
+    position: absolute;
+    top: 50%;
+    margin-top: -25px;
+    height: 50px;
+    width: 50px;
+    background-color: lightgrey;
+    opacity: 0.6;
+    border: 1px solid lightgrey;
+    color: black;
+    font-size: 25px;
+}
+
+
+.carousel-button:hover
+{
+    opacity: 0.9;
+}
+
+.carousel-button:focus
+{
+    outline: 0;
+}
+
+
+#next
+{
+    right: 0;
+    border-bottom-left-radius: 7px;
+    border-top-left-radius: 7px;
+}
+
+#previous
+{
+    left: 0;
+    border-bottom-right-radius: 7px;
+    border-top-right-radius: 7px;
+}
+
+
+  .carousel-item img
+{
+    width: 100%;
+    height: 700px;
+}
+
+#pause
+{
+    
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    margin-left: -25px;
+    height: 50px;
+    width: 50px;
+    background-color: lightgrey;
+    opacity: 0.6;
+    border: 1px solid lightgrey;
+    color: black;
+    font-size: 25px;
+}
+
+#play
+{
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    margin-left: -25px;
+    height: 50px;
+    width: 50px;
+    background-color: lightgrey;
+    opacity: 0.6;
+    border: 1px solid lightgrey;
+    color: black;
+    font-size: 25px;
+    display: none;
+}
+
+#play:hover
+{
+    opacity: 0.9;
+}
+
+#pause:hover
+{
+	opacity: 0.9;
+}
+
